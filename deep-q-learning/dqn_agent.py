@@ -88,12 +88,12 @@ class Agent():
         # Double DQN
         # Use local network to select max Q for actions in every experience
         Q_expected_next_max = self.qnetwork_local(next_states).detach().argmax(1).unsqueeze(1)
-        
         # Use gather to get the same actions but from the Q on target network
         Q_targets_next = self.qnetwork_target(next_states).gather(1, Q_expected_next_max) 
         
-        # Normal DQN, use target network for selecting next Q value
-        #  Q_targets_next = self.qnetwork_target(next_states).detach().max(1)[0].unsqueeze(1)
+        # Normal DQN
+		# use target network for selecting next Q value
+        # Q_targets_next = self.qnetwork_target(next_states).detach().max(1)[0].unsqueeze(1)
         Q_targets = rewards + (gamma * Q_targets_next * (1 - dones))
         
         # Get expected Q values from local model
