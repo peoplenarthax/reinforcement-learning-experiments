@@ -238,6 +238,4 @@ env.close()
 ```
 
 
-```python
-
-```
+![Running agent](run.gif "Running agent")
