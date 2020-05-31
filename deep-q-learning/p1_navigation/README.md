@@ -9,6 +9,18 @@ This Notebooks uses Unity's ML-Agents to solve a simple navigation task where ou
 
 This code uses UnityEnvironment (In this case is a customized version from Udacity), [NumPy](https://numpy.org/), and [PyTorch](https://pytorch.org/)
 
+- Download the environment from one of the links below. You need only select the environment that matches your operating system:
+
+Linux: click here
+Mac OSX: click here
+Windows (32-bit): click here
+Windows (64-bit): click here
+(For Windows users) Check out this link if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
+
+(For AWS) If you'd like to train the agent on AWS (and have not enabled a virtual screen), then please use this link to obtain the environment.
+
+Unzip the file in the repository and  refer to it when initializing UnityEnvironment.
+
 
 ```python
 from unityagents import UnityEnvironment
@@ -239,3 +251,13 @@ env.close()
 
 
 ![Running agent](run.gif "Running agent")
+
+
+### Future work
+
+There are different ways to continue the work on this project to improve the performance of the agent. DQN have some proposed improvements over the years, like Noisy DQN, Distributinal DQN, Dueling DQN... the paper about [Rainbow DQN](https://arxiv.org/pdf/1710.02298.pdf) shows that the combination of those improvements will led to 
+better performance. 
+
+We could also change a bit the conditions on the environment and the actions to improve the movements of the agent (right now there are some limitations when there are not yellow bananas in a radius around the player, or when the yellow banana is in between the rotation angle). 
+
+Finally, to add a and learn out the image output instead of the current state could probe to improve the performance as we can extract image features instead of counting on the ray tracing information. 
